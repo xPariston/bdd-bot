@@ -529,9 +529,7 @@ async def RessToMoney(Ress,Marktdict):
 
 async def getMarktPreise():
     async with aiohttp.ClientSession(headers=myheader) as session:
-        url = "http://rivalregions.com/storage/listed/3"
-        html = await fetch(session, url)
-        soup = await soup_d(html)
+
         marktpreise = {}
         marktdict= {}
         marktdict["Öl"] = "3"
@@ -556,8 +554,8 @@ async def getMarktPreise():
                     marktpreise[stoff] = str(round(wert/3))
                     break
 
-        marktdict["Staatsgeld"] = 0.5
-        marktdict["Staatsgold"] = 1
+        marktpreise["Staatsgeld"] = 0.5
+        marktpreise["Staatsgold"] = 1
 
         return marktpreise
 
