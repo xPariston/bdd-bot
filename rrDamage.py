@@ -556,6 +556,10 @@ async def getMarktPreise():
                     marktpreise[stoff] = str(round(wert/3))
                     break
 
+        marktdict["Staatsgeld"] = 0.5
+        marktdict["Staatsgold"] = 1
+
+
         return marktpreise
 
 async def getProfilParty(profilid,session):
