@@ -52,7 +52,7 @@ async def StateWars(context):
     Totalwarurllist = []
 
     for stateid in stateids:
-        Totalwarurllist.extend(await rrDamage.getStateWars7d(stateids,days))
+        Totalwarurllist.extend(await rrDamage.getStateWars7d(stateid,days))
     # for id in stateids:
     #     warlist= await rrDamage.getStateWars(id,days)
     #     for war in warlist:
