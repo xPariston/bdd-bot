@@ -14,7 +14,7 @@ profildict={}
 
 
 async def getPartys():
-    parteienchannel = discord.Object(id='504982742707077120')
+    parteienchannel = discord.Object(id='533602605864189962')
     parteiliste = []
     async for m in client.logs_from(parteienchannel, 100):
         p = m.content.strip()
