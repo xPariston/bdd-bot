@@ -60,8 +60,8 @@ async def StateWars(context):
     #         Totalwarurllist.append(warurl)
     #         TotalWars+=1
 
-    for war in Totalwarurllist:
-        Totalwarurllist[war] = warbase + war
+    for i,war in enumerate(Totalwarurllist):
+        Totalwarurllist[i] = warbase + war
 
     GesamtDamage, partydictRawDmg, partydictPerDmg = await rrDamage.MultiWar(Totalwarurllist, parteiliste)
 
