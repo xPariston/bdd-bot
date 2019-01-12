@@ -21,7 +21,55 @@ async def getPartys():
         parteiliste.append(p)
     return parteiliste
 
+@client.command(name="StateWars",
+                description='Analysiere Kriege die in den letzten 21 Tage beendet wurden in unseren Regionen.',
+                brief='Kriegsanalyse von allen Kriegen in unseren Regionen letzten 21 Tage',
+                pass_context=True)
 
+
+async def StateWars(context):
+
+    days = context.message.content
+    days = days.replace("!StateWars", "")
+    days = days.strip()
+    days = int(days)
+
+    parteiliste = await getPartys()
+
+    stateschannel = discord.Object(id='533606135912071169')
+    stateids = []
+    async for n in client.logs_from(stateschannel, 100):
+        n=n.content
+        n=n.split(":")
+        n=n[1].strip()
+        stateids.append(n)
+
+    warbase= "http://rivalregions.com/listed/partydamage/"
+
+
+
+    TotalWars=0
+    Totalwarurllist= await rrDamage.getStateWars7d(stateids,days)
+    # for id in stateids:
+    #     warlist= await rrDamage.getStateWars(id,days)
+    #     for war in warlist:
+    #         warurl= warbase + war
+    #         Totalwarurllist.append(warurl)
+    #         TotalWars+=1
+
+    GesamtDamage, partydictRawDmg, partydictPerDmg = await rrDamage.MultiWar(Totalwarurllist, parteiliste)
+
+    #for x in partydictRawDmg:
+    #    if partydictRawDmg[x] > 100000000:
+    #        await client.say(x + ": " + rrDamage.MakeNumber2PrettyString(partydictRawDmg[x]) + "\n")
+    Msg1 = "Gesamtschaden der Hanse in eigenen Kriegen(%d) während der letzten %d Tage: "%(TotalWars ,days) + rrDamage.MakeNumber2PrettyString(GesamtDamage) + "\n\n"
+    Msg2 = "Roher Schaden der Parteien:\n"
+    Msg3 = "\nProzentualer Schaden der Parteien:\n"
+    for j in partydictRawDmg:
+        Msg2 += j + ": " + rrDamage.MakeNumber2PrettyString(partydictRawDmg[j]) + '\n'
+    for i in partydictPerDmg:
+        Msg3 += i + ": " + str(round(partydictPerDmg[i], 2)) + "%\n"
+    await client.say(Msg1 + Msg2 + Msg3)
 
 @client.command(name="WarListPartyAnalyse",
                 description='Analysiere Kriege aus Datenbank auf Teilnahme unserer Parteien.',
