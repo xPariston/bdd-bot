@@ -499,6 +499,8 @@ async def soup_d(html, display_result=False):
 
 async def RessToMoney(Ress,Marktdict):
 
+    print (Ress)
+
     amount,TypeOfRess= Ress.split(' ')
 
     amount = int(amount.replace('.',''))
@@ -524,7 +526,7 @@ async def RessToMoney(Ress,Marktdict):
         Value = int(Marktdict["Diamanten"]) * amount
     if "g" in TypeOfRess:
         Value = int(Marktdict["Uran"]) * amount
-
+    print (Value)
     return Value
 
 async def getMarktPreise():
@@ -556,7 +558,7 @@ async def getMarktPreise():
 
         marktpreise["Staatsgeld"] = 0.5
         marktpreise["Staatsgold"] = 1
-
+        print (marktpreise)
         return marktpreise
 
 async def getProfilParty(profilid,session):
