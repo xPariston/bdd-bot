@@ -16,7 +16,7 @@ myheader = \
         "Cookie": "__cfduid=d69d7469bb2cfead36e2b8f70fef951071545946806; _iub_cs-76236742=%7B%22consent%22%3Atrue%2C%22timestamp%22%3A%222018-12-27T22%3A07%3A36.972Z%22%2C%22version%22%3A%221.2.4%22%2C%22id%22%3A76236742%7D; fbm_1457231197822920=base_domain=.rivalregions.com; PHPSESSID=gpkqvovoqlu1olqhf0pho22ue2; __atuvc=4%7C52%2C2%7C1%2C4%7C2%2C3%7C3; __atuvs=5c43a2721c96b144000; rr=0616af8500a633aa85acba0df947124e; rr_id=2000268192; rr_add=151117b3509ac7758c52a27dd00ca409",
         "Host": "rivalregions.com",
         "Upgrade-Insecure-Requests": "1",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
     }
 
 
