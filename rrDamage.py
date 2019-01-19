@@ -513,15 +513,16 @@ async def RessToMoney(Ress,Marktdict):
     # PriceUranium = 1300
 
     Value = 0
+    print (Marktdict["Erz"])
 
     if "$" in TypeOfRess:
         Value = round(int(Marktdict["Staatsgeld"]) * amount)
     if "G" in TypeOfRess:
         Value = int(Marktdict["Staatsgold"]) * amount
     if "kg" in TypeOfRess:
-        Value = int(Marktdict["Öl"]) * amount
-    if "bbl" in TypeOfRess:
         Value = int(Marktdict["Erz"]) * amount
+    if "bbl" in TypeOfRess:
+        Value = int(Marktdict["Öl"]) * amount
     if "pcs" in TypeOfRess:
         Value = int(Marktdict["Diamanten"]) * amount
     if "g" in TypeOfRess:
