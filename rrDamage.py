@@ -686,7 +686,7 @@ async def getRegionDonations(regionid, partylist,profildict, session,marktdict, 
                 Partydonations[x] = Partydonations[x] + partydict[x]
             else:
                 Partydonations[x] = partydict[x]
-
+    print (Partydonations)
     return Partydonations
 
 async def getStateDonations(stateid,partylist,profildict, marktdict, days):
