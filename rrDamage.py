@@ -502,7 +502,7 @@ async def RessToMoney(Ress,Marktdict):
     print (Ress)
 
     amount,TypeOfRess= Ress.split(' ')
-
+    TypeOfRess = TypeOfRess.strip()
     amount = int(amount.replace('.',''))
 
     # PriceStateMoney = 1
