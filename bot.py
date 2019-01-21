@@ -21,6 +21,68 @@ async def getPartys():
         parteiliste.append(p)
     return parteiliste
 
+async def getNations():
+    staatenchannel = discord.Object(id='536613128310620193')
+    staatenliste = []
+    async for n in client.logs_from(staatenchannel, 100):
+        n = n.content
+        n = n.split(":")
+        n = n[1].strip()
+        staatenliste.append(n)
+    return staatenliste
+
+@client.command(name="agnwarranking",
+                description='Ranking AGN',
+                brief='Rankimg AGN',
+                pass_context=True)
+
+
+async def agnwarranking(context):
+    war = context.message.content
+    war = war.replace("!agnwarranking", "")
+    war = war.strip()
+
+    staaten = await getNations()
+
+    partymember = await rrDamage.getNationPartys(staaten)
+
+    partydamage = await rrDamage.getWarDamage(partymember)
+
+    u50partydict, u25partydict = []
+    for p in partymember:
+        if int(partymember[p]) < 50:
+            u50partydict.append(p)
+        if int(partymember[p]) < 25:
+            u25partydict.append(p)
+
+    output1 = "Top Ten Parteien U25. \n"
+    output2 = "Top Ten Parteien U50. \n"
+    output3 = "Top Ten Parteien Overall. \n"
+    c1,c2,c3 = 0
+    listofTuples = sorted(partydamage.items(), reverse=True, key=lambda x: x[1])
+    for e in listofTuples:
+        if c1 < 10:
+            output3 += "e[0]: e[1] \n"
+            c1 += 1
+        if c2 < 10 & partymember[e[0]] < 50:
+            output2 += "e[0]: e[1] \n"
+            c2 += 1
+        if c3 < 10 & partymember[e[0]] < 25:
+            output1 += "e[0]: e[1] \n"
+            c3 += 1
+        else:
+            output1 += "\n"
+            output2 += "\n"
+            output3 += "\n"
+            break
+
+    client.say(output1 + output2 + output3)
+
+    #agn tabelle
+
+
+
+
 @client.command(name="StateWars",
                 description='Analysiere Kriege die in den letzten 21 Tage beendet wurden in unseren Regionen.',
                 brief='Kriegsanalyse von allen Kriegen in unseren Regionen letzten 21 Tage',

@@ -730,7 +730,31 @@ async def getStateDonations(stateid,partylist,profildict, marktdict, days):
 
         return partydonations
 
+async def getNationPatys(nations):
+    async with aiohttp.ClientSession(headers=myheader) as session:
+        urlbase = "https://rivalregions.com/listed/state_parties/"
 
+        partymember = {}
+
+        for n in nations:
+            url = urlbase + n
+            html = await fetch(session, url)
+            soup = await soup_d(html)
+
+            for e in soup.find_all(attrs={"class": "list_name pointer small"}):
+                party = e.get_text()
+                partymember[party] = 0
+
+            c = 3
+            memberlist=[]
+
+            for e in soup.find_all(attrs={"class": "list_name pointer small"}):
+                if c % 3 == 0:
+                    memberlist.append(e.get_text())
+                c+=1
+
+            for i,p in enumerate (partymember):
+                partymember[p] = memberlist[i]
 
 
 
