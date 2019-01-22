@@ -62,8 +62,8 @@ async def agnwarranking(context):
     #         u25partydict.append(p)
 
     output1 = "Top Ten Parteien U20. \n"
-    output2 = "Top Ten Parteien U35. \n"
-    output3 = "Top Ten Parteien Overall. \n"
+    output2 = "---- \n Top Ten Parteien U35. \n"
+    output3 = "---- \n Top Ten Parteien Overall. \n"
     c1 = 0
     c2 = 0
     c3 = 0
