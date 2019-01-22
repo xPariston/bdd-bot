@@ -79,9 +79,9 @@ async def agnwarranking(context):
             output1 += str(c3+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c3 += 1
         if c3 == 13:
-            output1 += "\n"
-            output2 += "\n"
-            output3 += "\n"
+            output1 += "\n\n"
+            output2 += "\n\n"
+            output3 += "\n\n"
             break
     print("cheko")
     await client.say(output1 + output2 + output3)
