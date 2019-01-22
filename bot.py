@@ -57,8 +57,8 @@ async def agnwarranking(context):
     #     if int(partymember[p]) < 25:
     #         u25partydict.append(p)
 
-    output1 = "Top Ten Parteien U15. \n"
-    output2 = "Top Ten Parteien U30. \n"
+    output1 = "Top Ten Parteien U20. \n"
+    output2 = "Top Ten Parteien U35. \n"
     output3 = "Top Ten Parteien Overall. \n"
     c1 = 0
     c2 = 0
@@ -72,10 +72,10 @@ async def agnwarranking(context):
         if c1 < 13:
             output3 += str(c1+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c1 += 1
-        if c2 < 13 and partymember[e[0]] < 30:
+        if c2 < 13 and partymember[e[0]] < 35:
             output2 += str(c2+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c2 += 1
-        if c3 < 13 and partymember[e[0]] < 15:
+        if c3 < 13 and partymember[e[0]] < 20:
             output1 += str(c3+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c3 += 1
         if c3 == 13:
