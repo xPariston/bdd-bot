@@ -62,6 +62,7 @@ async def agnwarranking(context):
     c1 = 0
     c2 = 0
     c3 = 0
+
     listofTuples = sorted(partydamage.items(), reverse=True, key=lambda x: x[1])
     for e in listofTuples:
         if c1 < 10:
