@@ -71,15 +71,15 @@ async def agnwarranking(context):
     print (partymember)
     for e in listofTuples:
         if c1 < 10:
-            output3 += str(c1) + ". " + e[0] + ": " + str(e[1]) + "--- Mitglieder:" + str(partymember[e[0]]) + "\n"
+            output3 += str(c1+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c1 += 1
         if c2 < 10 & partymember[e[0]] < 50:
-            output2 += str(c2) + ". " + e[0] + ": " + str(e[1]) + "--- Mitglieder:" + str(partymember[e[0]]) + "\n"
+            output2 += str(c2+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c2 += 1
         if c3 < 10 & partymember[e[0]] < 25:
-            output1 += str(c3) + ". " + e[0] + ": " + str(e[1]) + "--- Mitglieder:" + str(partymember[e[0]]) + "\n"
+            output1 += str(c3+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c3 += 1
-        else:
+        if c3 == 10:
             output1 += "\n"
             output2 += "\n"
             output3 += "\n"

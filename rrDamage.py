@@ -742,8 +742,13 @@ async def getNationPartys(nations):
             html = await fetch(session, url)
             soup = await soup_d(html)
 
+            c = 0
             for e in soup.find_all(attrs={"class": "list_name pointer small"}):
                 party = e.get_text()
+                if party in partymember:
+                    print ("partei dopellt!"+ party)
+                    party = party + str(c)
+                    c= c+1
                 partymember[party] = 0
 
             c = 3
