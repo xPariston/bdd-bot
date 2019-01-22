@@ -88,7 +88,9 @@ async def agnwarranking(context):
             output3 += "\n\n"
             break
     print("cheko")
-    await client.say(output1 + output2 + output3)
+    await client.say(output1)
+    await client.say(output2)
+    await client.say(output3)
 
     #agn tabelle
 
