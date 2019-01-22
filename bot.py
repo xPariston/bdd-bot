@@ -66,6 +66,7 @@ async def agnwarranking(context):
 
 
     listofTuples = sorted(partydamage.items(), reverse=True, key=operator.itemgetter(1))
+    print("check")
     for e in listofTuples:
         if c1 < 10:
             output3 += "e[0]: e[1] \n"
@@ -81,7 +82,7 @@ async def agnwarranking(context):
             output2 += "\n"
             output3 += "\n"
             break
-
+    print("cheko")
     client.say(output1 + output2 + output3)
 
     #agn tabelle
