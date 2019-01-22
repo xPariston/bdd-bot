@@ -48,7 +48,7 @@ async def agnwarranking(context):
 
     partymember = await rrDamage.getNationPartys(staaten)
 
-    partydamage = await rrDamage.MultiWar(war,partymember)
+    gesamtdamage,partydamage,percentdmg = await rrDamage.MultiWar(war,partymember)
     #
     # u50partydict, u25partydict = []
     # for p in partymember:
@@ -63,6 +63,7 @@ async def agnwarranking(context):
     c1 = 0
     c2 = 0
     c3 = 0
+
 
     listofTuples = await sorted(partydamage.items(), reverse=True, key=operator.itemgetter(1))
     for e in listofTuples:
