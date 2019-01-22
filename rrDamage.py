@@ -747,7 +747,7 @@ async def getNationPartys(nations):
                 partymember[party] = 0
 
             c = 3
-            for e in soup.find_all(attrs={"class": "list_name pointer small"}):
+            for e in soup.find_all(attrs={"class": "list_name pointer yellow"}):
                 if c % 3 == 0:
                     memberlist.append(e.get_text())
                 c+=1
