@@ -244,7 +244,7 @@ async def AllDonations(context):
     print("Alle Staaten beendet")
     partydonPro={}
 
-    Msg1 = "Gesamtspenden der Staaten während der letzten 21 Tage: " + rrDamage.MakeNumber2PrettyString(Gesamtspendenvolumen) + "\n\n"
+    Msg1 = "Gesamtspenden der Staaten während der letzten %d Tage: " %days + rrDamage.MakeNumber2PrettyString(Gesamtspendenvolumen) + "\n\n"
     Msg2 = "Spendenvolumen der Parteien:\n"
     for j in partydon:
         Msg2 += j + ": " + rrDamage.MakeNumber2PrettyString(partydon[j]) + '\n'

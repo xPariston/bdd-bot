@@ -730,7 +730,7 @@ async def getStateDonations(stateid,partylist,profildict, marktdict, days):
 
         return partydonations
 
-async def getNationPatys(nations):
+async def getNationPartys(nations):
     async with aiohttp.ClientSession(headers=myheader) as session:
         urlbase = "https://rivalregions.com/listed/state_parties/"
 
