@@ -735,6 +735,7 @@ async def getNationPatys(nations):
         urlbase = "https://rivalregions.com/listed/state_parties/"
 
         partymember = {}
+        memberlist = []
 
         for n in nations:
             url = urlbase + n
@@ -746,15 +747,14 @@ async def getNationPatys(nations):
                 partymember[party] = 0
 
             c = 3
-            memberlist=[]
-
             for e in soup.find_all(attrs={"class": "list_name pointer small"}):
                 if c % 3 == 0:
                     memberlist.append(e.get_text())
                 c+=1
 
-            for i,p in enumerate (partymember):
-                partymember[p] = memberlist[i]
+        for i,p in enumerate (partymember):
+            partymember[p] = int(memberlist[i])
 
+        return partymember
 
 

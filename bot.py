@@ -41,19 +41,20 @@ async def agnwarranking(context):
     war = context.message.content
     war = war.replace("!agnwarranking", "")
     war = war.strip()
+    war = war.split(",")
 
     staaten = await getNations()
 
     partymember = await rrDamage.getNationPartys(staaten)
 
-    partydamage = await rrDamage.getWarDamage(partymember)
-
-    u50partydict, u25partydict = []
-    for p in partymember:
-        if int(partymember[p]) < 50:
-            u50partydict.append(p)
-        if int(partymember[p]) < 25:
-            u25partydict.append(p)
+    partydamage = await rrDamage.MultiWar(war,partymember)
+    #
+    # u50partydict, u25partydict = []
+    # for p in partymember:
+    #     if int(partymember[p]) < 50:
+    #         u50partydict.append(p)
+    #     if int(partymember[p]) < 25:
+    #         u25partydict.append(p)
 
     output1 = "Top Ten Parteien U25. \n"
     output2 = "Top Ten Parteien U50. \n"
