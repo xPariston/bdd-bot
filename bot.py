@@ -64,7 +64,6 @@ async def agnwarranking(context):
     c2 = 0
     c3 = 0
 
-
     listofTuples = sorted(partydamage.items(), reverse=True, key=operator.itemgetter(1))
     print("check")
     print (listofTuples)
