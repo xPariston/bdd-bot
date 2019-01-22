@@ -67,6 +67,8 @@ async def agnwarranking(context):
 
     listofTuples = sorted(partydamage.items(), reverse=True, key=operator.itemgetter(1))
     print("check")
+    print (listofTuples)
+    print (partymember)
     for e in listofTuples:
         if c1 < 10:
             output3 += str(c1) + ". " + e[0] + ": " + str(e[1]) + "--- Mitglieder:" + str(partymember[e[0]]) + "\n"
