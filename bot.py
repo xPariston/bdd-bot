@@ -69,13 +69,13 @@ async def agnwarranking(context):
     print("check")
     for e in listofTuples:
         if c1 < 10:
-            output3 += "e[0]: e[1] \n"
+            output3 += str(c1) + ". " + e[0] + ": " + e[1] + "--- Mitglieder:" + partymember[e[0]] + "\n"
             c1 += 1
         if c2 < 10 & partymember[e[0]] < 50:
-            output2 += "e[0]: e[1] \n"
+            output2 += str(c2) + ". " + e[0] + ": " + e[1] + "--- Mitglieder:" + partymember[e[0]] + "\n"
             c2 += 1
         if c3 < 10 & partymember[e[0]] < 25:
-            output1 += "e[0]: e[1] \n"
+            output1 += str(c3) + ". " + e[0] + ": " + e[1] + "--- Mitglieder:" + partymember[e[0]] + "\n"
             c3 += 1
         else:
             output1 += "\n"
