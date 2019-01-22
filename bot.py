@@ -57,8 +57,8 @@ async def agnwarranking(context):
     #     if int(partymember[p]) < 25:
     #         u25partydict.append(p)
 
-    output1 = "Top Ten Parteien U25. \n"
-    output2 = "Top Ten Parteien U50. \n"
+    output1 = "Top Ten Parteien U15. \n"
+    output2 = "Top Ten Parteien U30. \n"
     output3 = "Top Ten Parteien Overall. \n"
     c1 = 0
     c2 = 0
@@ -70,16 +70,16 @@ async def agnwarranking(context):
     print (listofTuples)
     print (partymember)
     for e in listofTuples:
-        if c1 < 10:
+        if c1 < 13:
             output3 += str(c1+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c1 += 1
-        if c2 < 10 & partymember[e[0]] < 50:
+        if c2 < 13 and partymember[e[0]] < 30:
             output2 += str(c2+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c2 += 1
-        if c3 < 10 & partymember[e[0]] < 25:
+        if c3 < 13 and partymember[e[0]] < 15:
             output1 += str(c3+1) + ". " + e[0] + ": " + rrDamage.MakeNumber2PrettyString(e[1]) + "--- Mitglieder: " + str(partymember[e[0]]) + "\n"
             c3 += 1
-        if c3 == 10:
+        if c3 == 13:
             output1 += "\n"
             output2 += "\n"
             output3 += "\n"
