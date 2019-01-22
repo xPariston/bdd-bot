@@ -65,7 +65,7 @@ async def agnwarranking(context):
     c3 = 0
 
 
-    listofTuples = await sorted(partydamage.items(), reverse=True, key=operator.itemgetter(1))
+    listofTuples = sorted(partydamage.items(), reverse=True, key=operator.itemgetter(1))
     for e in listofTuples:
         if c1 < 10:
             output3 += "e[0]: e[1] \n"
