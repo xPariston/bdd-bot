@@ -95,6 +95,84 @@ async def agnwarranking(context):
     #agn tabelle
 
 
+@client.command(name="agnwartabelle",
+                description='Ranking AGN aktualisieren',
+                brief='Ranking AGN aktualiseren',
+                pass_context=True)
+
+
+async def agnwartabelle(context):
+
+    spieltag = 1
+
+    blacklist = []
+    blacklist.append("Army of Farmers")
+
+    war = context.message.content
+    war = war.replace("!agnwarranking", "")
+    war = war.strip()
+    war = war.split(",")
+
+    try:
+        staaten = await getNations()
+
+        partymember = await rrDamage.getNationPartys(staaten)
+
+        gesamtdamage,partydamage,percentdmg = await rrDamage.MultiWar(war,partymember)
+    except:
+        print("exception occured")
+        await client.say ("Bad Connection. Versuche es nochmal.")
+    #
+    # u50partydict, u25partydict = []
+    # for p in partymember:
+    #     if int(partymember[p]) < 50:
+    #         u50partydict.append(p)
+    #     if int(partymember[p]) < 25:
+    #         u25partydict.append(p)
+
+    x = 0
+    for o in partydamage:
+        if x < len(o):
+            x = len(o)
+
+
+    head = "  Team  " + (" " * x) + "   | 1 | 2 | 3 | 4 | 5 || Punkte | Gesamtschaden \n"
+    seperator = "--------" + ("-" * x) + "---+---+---+---+---++---------+--------------------\n"
+
+    output1 = "Top Ten Parteien U20. \n" + head + seperator
+    output2 = "---- \n Top Ten Parteien U35. \n" + head + seperator
+    output3 = "---- \n Top Ten Parteien Overall. \n" + head + seperator
+    c1 = 0
+    c2 = 0
+    c3 = 0
+
+    listofTuples = sorted(partydamage.items(), reverse=True, key=operator.itemgetter(1))
+    print("check")
+    print (listofTuples)
+    print (partymember)
+
+    for e in listofTuples:
+        if c1 < 10 and e[0] not in blacklist:
+            abstand = x - len[e[0]]
+            output3 += str(c1+1) + ". " + e[0] + (" " * abstand) + "| " + 10-c1 + " | x | x | x | x |  " + 10-c1 + "    | " + rrDamage.MakeNumber2PrettyString(e[1]) + "\n" + seperator
+            c1 += 1
+        if c2 < 10 and partymember[e[0]] < 35 and e[0] not in blacklist:
+            output2 += str(c2+1) + ". " + e[0] + (" " * abstand) + "| " + 10-c2 + " | x | x | x | x |  " + 10-c2 + "    | " +  rrDamage.MakeNumber2PrettyString(e[1]) + "\n" +  seperator
+            c2 += 1
+        if c3 < 10 and partymember[e[0]] < 20 and e[0] not in blacklist:
+            output1 += str(c3+1) + ". " + e[0] + (" " * abstand) + "| " + 10-c3 + " | x | x | x | x |  " + 10-c3 + "    | " + rrDamage.MakeNumber2PrettyString(e[1]) + "\n" + seperator
+            c3 += 1
+        if c3 == 13:
+            output1 += "\n\n"
+            output2 += "\n\n"
+            output3 += "\n\n"
+            break
+    print("cheko")
+    await client.say(output1)
+    await client.say(output2)
+    await client.say(output3)
+
+    #agn tabelle
 
 
 @client.command(name="StateWars",
