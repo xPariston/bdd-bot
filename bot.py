@@ -109,7 +109,7 @@ async def agnwartabelle(context):
     blacklist.append("Army of Farmers")
 
     war = context.message.content
-    war = war.replace("!agnwarranking", "")
+    war = war.replace("!agnwartabelle", "")
     war = war.strip()
     war = war.split(",")
 
