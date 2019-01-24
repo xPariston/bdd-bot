@@ -113,15 +113,15 @@ async def agnwartabelle(context):
     war = war.strip()
     war = war.split(",")
 
-    try:
-        staaten = await getNations()
+    #try:
+    staaten = await getNations()
 
-        partymember = await rrDamage.getNationPartys(staaten)
+    partymember = await rrDamage.getNationPartys(staaten)
 
-        gesamtdamage,partydamage,percentdmg = await rrDamage.MultiWar(war,partymember)
-    except:
-        print("exception occured")
-        await client.say ("Bad Connection. Versuche es nochmal.")
+    gesamtdamage,partydamage,percentdmg = await rrDamage.MultiWar(war,partymember)
+    #except:
+    #    print("exception occured")
+    #    await client.say ("Bad Connection. Versuche es nochmal.")
     #
     # u50partydict, u25partydict = []
     # for p in partymember:
