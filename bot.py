@@ -136,8 +136,8 @@ async def agnwartabelle(context):
             x = len(o)
 
 
-    head = "  Team  " + (" " * x) + "   | 1 | 2 | 3 | 4 | 5 || Punkte | Gesamtschaden \n"
-    seperator = ("-" * x) + "---+---+---+---+---++---------+-----\n"
+    head = "  Team   " + (" " * x) + "   | 1 | 2 | 3 | 4 | 5 || Punkte | Gesamtschaden \n"
+    seperator = ("-" * x) + "+---+---+---+---++---------+-----\n"
 
     output1 = "Top Ten Parteien U20. \n" + head + seperator
     output2 = "---- \n Top Ten Parteien U35. \n" + head + seperator
@@ -154,15 +154,15 @@ async def agnwartabelle(context):
     for e in listofTuples:
         if c1 < 10 and e[0] not in blacklist:
             #abstand = x - len(e[0])
-            output3 += str(c1+1) + ". " + e[0] + "\n" + (" " * (x+10)) + "| " + str(10-c1) + " | x | x | x | x ||  " + str(10-c1) + "    | " + rrDamage.MakeNumber2PrettyString(e[1]) + "\n" + seperator
+            output3 += str(c1+1) + ". " + e[0] + "\n" + (" " * (x+16)) + "| " + str(10-c1) + " | x | x | x | x ||  " + str(10-c1) + "    | " + rrDamage.MakeNumber2PrettyString(e[1]) + "\n" + seperator
             c1 += 1
         if c2 < 10 and partymember[e[0]] < 35 and e[0] not in blacklist:
             #abstand = x - len(e[0])
-            output2 += str(c2+1) + ". " + e[0] + "\n" + (" " * (x+10)) + "| " + str(10-c2) + " | x | x | x | x ||  " + str(10-c2) + "    | " +  rrDamage.MakeNumber2PrettyString(e[1]) + "\n" +  seperator
+            output2 += str(c2+1) + ". " + e[0] + "\n" + (" " * (x+16)) + "| " + str(10-c2) + " | x | x | x | x ||  " + str(10-c2) + "    | " +  rrDamage.MakeNumber2PrettyString(e[1]) + "\n" +  seperator
             c2 += 1
         if c3 < 10 and partymember[e[0]] < 20 and e[0] not in blacklist:
             #abstand = x - len(e[0])
-            output1 += str(c3+1) + ". " + e[0] + "\n" + (" " * (x+10)) + "| " + str(10-c3) + " | x | x | x | x ||  " + str(10-c3) + "    | " + rrDamage.MakeNumber2PrettyString(e[1]) + "\n" + seperator
+            output1 += str(c3+1) + ". " + e[0] + "\n" + (" " * (x+16)) + "| " + str(10-c3) + " | x | x | x | x ||  " + str(10-c3) + "    | " + rrDamage.MakeNumber2PrettyString(e[1]) + "\n" + seperator
             c3 += 1
         if c3 == 13:
             output1 += "\n\n"
