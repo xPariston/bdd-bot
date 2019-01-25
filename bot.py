@@ -137,7 +137,7 @@ async def agnwartabelle(context):
 
 
     head = "  Team  " + (" " * x) + "   | 1 | 2 | 3 | 4 | 5 || Punkte | Gesamtschaden \n"
-    seperator = "--------" + ("-" * x) + "---+---+---+---+---++---------+--------------------\n"
+    seperator = "-----" + ("-" * x) + "---+---+---+---+---++---------+-----\n"
 
     output1 = "Top Ten Parteien U20. \n" + head + seperator
     output2 = "---- \n Top Ten Parteien U35. \n" + head + seperator
