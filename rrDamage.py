@@ -13,7 +13,7 @@ myheader = \
         "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
         "Cache-Control": "max-age=0",
         "Connection": "keep-alive",
-        "Cookie": "__cfduid=db44bfd7059b0aaaa0a1593a68ecdeb091550251837; PHPSESSID=00ttc9f3u8ptqb5v3hq24oc917; __atuvc=1%7C7; __atuvs=5c66f73ec9a24335000; rr=d048a7f028355008b45bc14a9e26fa71; rr_id=2000268192; rr_add=7e2a0a22732053755291f2e935b2321e; rr_f=63aff8ef3077ecf3747a33408bcd51a1",
+        "Cookie": "__cfduid=db44bfd7059b0aaaa0a1593a68ecdeb091550251837; PHPSESSID=6jpf4prarvagalh6cha963r675; __atuvc=3%7C7; __atuvs=5c682cb4d95bddd6001; _iub_cs-76236742=%7B%22consent%22%3Atrue%2C%22timestamp%22%3A%222019-02-16T15%3A31%3A01.906Z%22%2C%22version%22%3A%221.2.4%22%2C%22id%22%3A76236742%7D; rr=58dd67e249ce85d8f6ad0af76e1460d5; rr_id=2000268192; rr_add=7e2a0a22732053755291f2e935b2321e; rr_f=b6e11175fe0e77aaaa68717202e34878",
         "Host": "rivalregions.com",
         "Upgrade-Insecure-Requests": "1",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36",
