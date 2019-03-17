@@ -13,7 +13,7 @@ myheader = \
         "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
         "Cache-Control": "max-age=0",
         "Connection": "keep-alive",
-        "Cookie": "__cfduid=d9e7bce4708b3f86eaaf2d009a6582a131551544050; _iub_cs-76236742=%7B%22consent%22%3Atrue%2C%22timestamp%22%3A%222019-03-02T16%3A27%3A47.260Z%22%2C%22version%22%3A%221.2.4%22%2C%22id%22%3A76236742%7D; PHPSESSID=k3f2gmcn7jq11rtake2gbdv8h3; __atuvc=2%7C9%2C0%7C10%2C1%7C11%2C1%7C12; __atuvs=5c8e7917e92f8ffb000; rr=09efe0a0480589c2c9d5e6da5adfa1c7; rr_id=2000268192; rr_add=2ac926e9c70c527adc60edc5251bf16a; rr_f=104e385eb2b71f4b42604ee9d11ffe91",
+        "Cookie": "__cfduid=d9e7bce4708b3f86eaaf2d009a6582a131551544050; _iub_cs-76236742=%7B%22consent%22%3Atrue%2C%22timestamp%22%3A%222019-03-02T16%3A27%3A47.260Z%22%2C%22version%22%3A%221.2.4%22%2C%22id%22%3A76236742%7D; PHPSESSID=qs5ftv0h4nn996v4hq4eggbvs1; __atuvc=2%7C12; __atuvs=5c8e9f0462de76ee001; rr=f96ed8a62200ace876088327c7edd0bb; rr_id=2000268192; rr_add=2ac926e9c70c527adc60edc5251bf16a; rr_f=1692b297f020d7d24429aa622d972580",
         "Host": "rivalregions.com",
         "Upgrade-Insecure-Requests": "1",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
